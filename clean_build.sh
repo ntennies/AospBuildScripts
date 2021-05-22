@@ -5,10 +5,7 @@ if [ "$#" -ne 1 ]; then
     exit 2
 fi
 
-#docker run -it --rm -v ~/Android:/home/ubuntu/Android android-build-trusty
-
-sudo docker run --rm -v ~/Android:/home/nathantennies/Android android-build-trusty '/home/nathantennies/Android/build_scripts/clean_build_docker.sh' $1
-
+sudo docker run --entrypoint="/home/ubuntu/Android/build_scripts/clean_build_docker.sh" --rm -v ~/Android:/home/ubuntu/Android android-build-trusty $1
 
 
 
